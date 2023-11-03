@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/03 15:17:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:32:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ int check_and_save(char *str, t_stack *first_node)
 	return (flag);
 }
 
-int	check_nb_in_argv(char *str)
+int	check_nb_in_argv(char **str, t_stack *stack_A)
 {
 	int i;
 	int flag;
 	char **nb_aux;
 
-	i = 0;
+	i = 1;
 	flag = 1;
 	nb_aux = NULL;
 	while(str[++i])
@@ -59,9 +59,9 @@ int	check_nb_in_argv(char *str)
 	}
 	if (nb_aux)
 	while (nb_aux[++i])
-		check_and_save(nb_aux[i], t_stack);
+		check_and_save(nb_aux[i], stack_A);
 	else
-		check_and_save(str, t_stack);
+		check_and_save(str, stack_A);
 }
 
 // int	check_args(char **str)
