@@ -28,16 +28,36 @@ int	check_if_nb(char *str)
 int check_and_save(char *str, t_stack *first_node)
 {
 	int flag;
-	t_stack *peep;
+	t_stack *aux;
 
-	flag = 1;
+	// flag = 1;
 	flag = check_if_nb(str);
 	if (flag == 1)
 		{
-			peep = ft_lst_new(str);
-			ft_lstadd_back(&first_node, peep);
+			aux = ft_lst_new(str);
+			ft_lstadd_back(&first_node, aux);
 		}
 	return (flag);
+}
+
+int	check_duplicated(t_stack *stack_A)
+{
+	t_stack *aux;
+	
+	if (!stack_A)
+		return (0);
+	while (stack_A != NULL)
+	{
+		aux = stack_A->next;
+		while (aux != NULL)
+		{
+			if (stack_A->value == aux->value)
+				return (1);
+			aux = aux->next;
+		}
+		stack_A = stack_A->next;
+	}
+	return (0);
 }
 
 int	check_nb_in_argv(char **str, t_stack *stack_A)

@@ -18,6 +18,7 @@
 typedef struct s_stack
 {
     int		value;
+    struct s_stack *next;
 }t_stack;
 
 // int	check_args(char **str);
