@@ -36,3 +36,10 @@ void	do_sb(t_stack **stack_b)
 	ft_swap(stack_b);
 	ft_printf("%s","sb\n");
 }
+
+void	do_sb(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_swap(stack_a);
+	ft_swap(stack_b);
+	ft_printf("%s","ss\n");
+}
