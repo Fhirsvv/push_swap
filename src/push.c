@@ -11,3 +11,28 @@
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int push(t_stack **src, t_stack **dst)
+{
+    t_stack *aux;
+
+    if (!*src)
+        return (0);
+    aux = *src;
+    *src = aux->next;
+    aux->next = NULL;
+    ft_lstadd_front(dst, aux);
+    return (1);
+}
+
+void    pa(t_stack **stack_a, t_stack **stack_b)
+{
+    push(stack_b, stack_a);
+    ft_printf("%s\n", "pa");
+}
+
+void    pb(t_stack **stack_a, t_stack **stack_b)
+{
+    push(stack_a, stack_b);
+    ft_printf("%s\n", "pb");
+}
