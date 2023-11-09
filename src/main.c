@@ -12,6 +12,19 @@
 
 #include "../include/push_swap.h"
 
+int is_shorted(t_stack *stack)
+{
+    if (!stack)
+        return (0);
+    while (stack->next != NULL)
+    {
+        if (stack->value > (stack->next)->value)
+            return (0);
+        stack = stack->next;
+    }
+    return (1);
+}
+
 int main(int argc, char **argv)
 {
     t_stack	*stack_a;
