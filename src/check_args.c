@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/03 15:32:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:06:08 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,22 @@ int check_and_save(char *str, t_stack *first_node)
 	return (flag);
 }
 
-int	check_duplicated(t_stack *stack_A)
+int	check_duplicated(t_stack *stack_a)
 {
 	t_stack *aux;
 	
-	if (!stack_A)
+	if (!stack_a)
 		return (0);
-	while (stack_A != NULL)
+	while (stack_a != NULL)
 	{
-		aux = stack_A->next;
+		aux = stack_a->next;
 		while (aux != NULL)
 		{
-			if (stack_A->value == aux->value)
+			if (stack_a->value == aux->value)
 				return (1);
 			aux = aux->next;
 		}
-		stack_A = stack_A->next;
+		stack_a = stack_a->next;
 	}
 	return (0);
 }
