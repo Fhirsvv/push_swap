@@ -25,6 +25,7 @@ int	check_if_nb(char *str)
 		return (0);
 	return (1);
 }
+
 int check_and_save(char *str, t_stack *first_node)
 {
 	int flag;
@@ -60,7 +61,7 @@ int	check_duplicated(t_stack *stack_a)
 	return (0);
 }
 
-int	check_nb_in_argv(char **str, t_stack *stack_A)
+int	check_nb_in_argv(char **str, t_stack *stack_a)
 {
 	int i;
 	int flag;
@@ -79,23 +80,8 @@ int	check_nb_in_argv(char **str, t_stack *stack_A)
 	}
 	if (nb_aux)
 	while (nb_aux[++i])
-		check_and_save(nb_aux[i], stack_A);
+		check_and_save(nb_aux[i], stack_a);
 	else
-		check_and_save(str, stack_A);
+		check_and_save(str, stack_a);
+	return (flag);
 }
-
-// int	check_args(char **str)
-// {
-// 	int	i;
-// 	int sum_zero;
-	
-// 	i = 1;
-// 	while (str[i])
-// 	{
-// 		if (!(check_if_nb(str[i])))
-// 			return (0);
-// 		//TODO: PASAR A NUMERO Y DPS DUPLICADOS
-// 		i++;
-// 	}
-// 	return (1);
-// }
