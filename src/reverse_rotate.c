@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:00:05 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/03 12:51:49 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:49:13 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int reverse_rotate(t_stack **stack)
     t_stack *aux;
     t_stack *new_last;
 
-    last = ft_lstlast(*stack);
+    last = ft_lstlast_ps(*stack);
     new_last = ft_get_penultimate(*stack);
     aux = *stack;
     *stack = last;

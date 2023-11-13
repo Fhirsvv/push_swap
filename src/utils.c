@@ -67,3 +67,8 @@ void	ft_lstadd_back_ps(t_stack **lst, t_stack *new)
 		last->next = new;
 	}
 }
+void	ft_lstadd_front_ps(t_stack **lst, t_stack *new)
+{
+	new->next = *lst;
+	*lst = new;
+}

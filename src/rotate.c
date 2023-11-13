@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:00:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/02 11:00:58 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:50:05 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ int rotate(t_stack **stack)
 
     aux = *stack;
     *stack = (*stack)->next;
-    last = ft_lstlast(*stack);
+    last = ft_lstlast_ps(*stack);
     aux->next = NULL;
     last->next = aux;
+    return(1);
 }
 
 void    ft_ra(t_stack **stack_a)

@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 11:00:15 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 15:39:29 by fdiaz-gu         ###   ########.fr       */
+/*   Created: 2023/11/13 15:40:56 by fdiaz-gu          #+#    #+#             */
+/*   Updated: 2023/11/13 16:55:11 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int push(t_stack **src, t_stack **dst)
+t_stack	*ft_lstlast_ps(t_stack *lst)
 {
-    t_stack *aux;
-
-    if (!*src)
-        return (0);
-    aux = *src;
-    *src = aux->next;
-    aux->next = NULL;
-    ft_lstadd_front_ps(dst, aux);
-    return (1);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
 
-void    ft_pa(t_stack **stack_a, t_stack **stack_b)
+int	ft_lstsize_ps(t_stack *lst)
 {
-    push(stack_b, stack_a);
-    ft_printf("%s\n", "pa");
-}
+	int	i;
 
-void    ft_pb(t_stack **stack_a, t_stack **stack_b)
-{
-    push(stack_a, stack_b);
-    ft_printf("%s\n", "pb");
+	i = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		i++;
+	}
+	return (i);
 }
