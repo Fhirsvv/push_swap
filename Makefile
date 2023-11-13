@@ -4,7 +4,7 @@ SRC = check_args.c main.c push.c reverse_rotate.c rotate.c swap.c utils.c
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 BONUS_OBJS = $(addprefix $(BONUS_DIR)/, $(BONUS:.c=.o))
 CC = gcc
-CFLAGS = #-Wall -Werror -Wextra #-fsanitize=address -g3
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g3
 AR = ar
 ARFLAGS = rcs
 RM = rm -rf

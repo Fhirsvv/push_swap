@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/10 14:06:08 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:44:20 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,15 @@ int check_and_save(char *str, t_stack *first_node)
 {
 	int flag;
 	t_stack *aux;
+	int nb;
 
 	// flag = 1;
+	nb = ft_atoi(str);
 	flag = check_if_nb(str);
 	if (flag == 1)
 		{
-			aux = ft_lst_new(str);
-			ft_lstadd_back(&first_node, aux);
+			aux = ft_lstnew_ps(nb);
+			ft_lstadd_back_ps(&first_node, aux);
 		}
 	return (flag);
 }
@@ -74,7 +76,7 @@ int	check_nb_in_argv(char **str, t_stack *stack_a)
 	{
 		if (str[i] == 32)
 		{
-			nb_aux = ft_split(str, " ");
+			nb_aux = ft_split(str[i], 32);
 			break ;
 		}		
 	}
