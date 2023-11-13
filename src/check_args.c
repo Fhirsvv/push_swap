@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 17:34:21 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:49:58 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	check_duplicated(t_stack *stack_a)
 	return (0);
 }
 //TODO: Acortar función
+//TODO: Modificar función para passar cada argumento y no todo del tirón
 int	check_nb_in_argv(char **str, t_stack *stack_a)
 {
 	int i;
@@ -76,14 +77,14 @@ int	check_nb_in_argv(char **str, t_stack *stack_a)
 	j = 1;
 	k = 0;
 	flag = 1;
-	nb_aux = NULL;	
+	nb_aux = NULL;
 	while(str[i])
-	{			
+	{
 		while (str[i][k])
 		{
 			if (str[i][k] == 32)
 			{
-				nb_aux = ft_split(str[i], 32);				
+				nb_aux = ft_split(str[i], 32);
 				break ;
 			}
 			k++;
@@ -98,11 +99,14 @@ int	check_nb_in_argv(char **str, t_stack *stack_a)
 			check_and_save(nb_aux[i], stack_a);
 			i++;
 		}
-	}		
+	}
+	else
+	{
 		while (str[j])
 		{
 			check_and_save(str[j], stack_a);
-			j++;
+			j++;	
 		}
+	}
 	return (flag);
 }
