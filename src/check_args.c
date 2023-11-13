@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 17:02:04 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:34:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int check_and_save(char *str, t_stack *first_node)
 	int nb;
 	// flag = 1;
 	nb = ft_atoi(str);
+	ft_printf("%s\n", "cas");
 	ft_printf("%i\n", nb);
 	flag = check_if_nb(str);
 	if (flag == 1)
@@ -62,7 +63,7 @@ int	check_duplicated(t_stack *stack_a)
 	}
 	return (0);
 }
-
+//TODO: Acortar función
 int	check_nb_in_argv(char **str, t_stack *stack_a)
 {
 	int i;
@@ -73,21 +74,35 @@ int	check_nb_in_argv(char **str, t_stack *stack_a)
 
 	i = 1;
 	j = 1;
-	k = 1;
+	k = 0;
 	flag = 1;
-	nb_aux = NULL;
-	while(str[++i])
-	{
-		if (str[i][++k] == 32)
+	nb_aux = NULL;	
+	while(str[i])
+	{			
+		while (str[i][k])
 		{
-			nb_aux = ft_split(str[i], 32);
-			break ;
-		}		
-	}
+			if (str[i][k] == 32)
+			{
+				nb_aux = ft_split(str[i], 32);				
+				break ;
+			}
+			k++;
+		}
+		i++;
+	}	
+	i = 0;
 	if (nb_aux)
-	while (nb_aux[++i] && str[++j])
-		check_and_save(nb_aux[i], stack_a);
-	else
-		check_and_save(str[j], stack_a);	
+	{
+		while (nb_aux[i])
+		{
+			check_and_save(nb_aux[i], stack_a);
+			i++;
+		}
+	}		
+		while (str[j])
+		{
+			check_and_save(str[j], stack_a);
+			j++;
+		}
 	return (flag);
 }
