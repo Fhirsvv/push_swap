@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:38:51 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 19:02:31 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:33:51 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,19 @@ void	order_five(t_stack **stack_a, t_stack **stack_b)
 		ft_pb(stack_a, stack_b);
 		i--;		
 	}
+	// while (stack_b)
+    // {
+    //     ft_printf("stack_b: ");
+    //     ft_printf("%i\n", (*stack_b)->value);
+    //     stack_b = &(*stack_b)->next;
+    // }
 	order_three(stack_a);
+	// while (stack_a)
+    // {
+    //     ft_printf("stack_a: ");
+    //     ft_printf("%i\n", (*stack_a)->value);
+    //     stack_a = &(*stack_a)->next;
+    // }
 	ft_pa(stack_a, stack_b);
 	ft_pa(stack_a, stack_b);
 }

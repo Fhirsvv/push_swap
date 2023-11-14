@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 18:39:54 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:29:05 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ int main(int argc, char **argv)
         ft_printf("%i\n", stack_a->value);
         stack_a = stack_a->next;
     }
-    while (stack_b)
-    {
-        ft_printf("stack_b: ");
-        ft_printf("%i\n", stack_b->value);
-        stack_b = stack_b->next;
-    }
+    // while (stack_b)
+    // {
+    //     ft_printf("stack_b: ");
+    //     ft_printf("%i\n", stack_b->value);
+    //     stack_b = stack_b->next;
+    // }
 }
