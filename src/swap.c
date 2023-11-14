@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:00:12 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 16:51:25 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:49:13 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,18 @@ static int    ft_swap(t_stack **stack)
 void	ft_sa(t_stack **stack_a)
 {
 	ft_swap(stack_a);
-	ft_printf("%s","sa\n");
+	ft_printf("%s\n","sa");
 }
 
 void	ft_sb(t_stack **stack_b)
 {
 	ft_swap(stack_b);
-	ft_printf("%s","sb\n");
+	ft_printf("%s\n","sb");
 }
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	ft_printf("%s","ss\n");
+	ft_printf("%s\n","ss");
 }
