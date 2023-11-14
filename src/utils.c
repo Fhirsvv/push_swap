@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 11:53:17 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:39:14 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,35 +20,6 @@ t_stack	*ft_get_penultimate(t_stack *stack)
 	while (stack && (stack->next)->next != NULL)
 		stack = stack->next;
 	return (stack);
-}
-
-void order_three(t_stack **stack_a)
-{
-	if ((*stack_a)->value < (*stack_a)->next->value)
-	{
-		if ((*stack_a)->value > (*stack_a)->next->next->value)
-			ft_rra(stack_a);
-		else
-		{
-			ft_rra(stack_a);
-			ft_sa(stack_a);
-		}
-	}
-	else
-	{
-		if ((*stack_a)->next->value > (*stack_a)->next->next->value)
-		{
-			ft_sa(stack_a);
-			ft_rra(stack_a);
-		}
-		else
-		{
-			if ((*stack_a)->value > (*stack_a)->next->next->value)
-				ft_ra(stack_a);
-			else
-				ft_sa(stack_a);
-		}
-	}
 }
 
 t_stack	*ft_lstnew_ps(int content)

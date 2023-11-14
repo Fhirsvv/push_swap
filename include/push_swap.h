@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 15:42:59 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:16:38 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 typedef struct s_stack
 {
-    int		value;
-    struct s_stack *next;
+    int		value;    
+    struct  s_stack *next;
 }t_stack;
 
 t_stack	*ft_get_penultimate(t_stack *stack);
@@ -47,3 +47,6 @@ int	ft_lstsize_ps(t_stack *lst);
 t_stack	*resort_ags(char **argv, t_stack **stack);
 void	ft_error(void);
 int	ft_atoi_ps(const char *str);
+int find_min(t_stack **stack);
+void	order_five(t_stack **stack_a, t_stack **stack_b);
+int find_min_pos(t_stack **stack, int min);
