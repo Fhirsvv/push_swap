@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 11:23:02 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:00:52 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
 # include "../libft/get_next_line.h"
+# define COLOR_RED "\033[0;31m"
 
 typedef struct s_stack
 {
@@ -44,3 +45,4 @@ void	ft_lstadd_front_ps(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast_ps(t_stack *lst);
 int	ft_lstsize_ps(t_stack *lst);
 t_stack	*resort_ags(char **argv, t_stack **stack);
+void	ft_error(void);

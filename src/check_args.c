@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 11:49:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:06:23 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_if_nb(char *str)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-		return (0);
+		ft_error(void);
 	return (1);
 }
 
@@ -62,7 +62,7 @@ int	check_duplicated(t_stack **stack_a)
 		while (aux != NULL)
 		{
 			if ((*stack_a)->value == aux->value)
-				return (1);
+				ft_error(void);
 			aux = aux->next;
 		}
 		stack_a = &(*stack_a)->next;
