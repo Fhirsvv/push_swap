@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 17:49:58 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:23:14 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,27 @@ int	check_if_nb(char *str)
 	return (1);
 }
 
-int check_and_save(char *str, t_stack *first_node)
+t_stack *check_and_save(char *str, t_stack **first_node)
 {
 	int flag;
 	t_stack *aux;
 	int nb;
-	// flag = 1;
+	
+	// ft_printf("%s\n", str);
 	nb = ft_atoi(str);
-	ft_printf("%s\n", "cas");
-	ft_printf("%i\n", nb);
 	flag = check_if_nb(str);
+	// ft_printf("Flag: %i\n", flag);
 	if (flag == 1)
 		{
 			aux = ft_lstnew_ps(nb);
-			ft_lstadd_back_ps(&first_node, aux);
+			// ft_printf("AUX VALUE: %i\n", aux->value);
+			ft_lstadd_back_ps(first_node, aux);
 		}
-	return (flag);
+	// ft_printf("NODE: %i\n", first_node->value);
+	return (*first_node);
 }
 
-int	check_duplicated(t_stack *stack_a)
+int	check_duplicated(t_stack **stack_a)
 {
 	t_stack *aux;
 	
@@ -52,61 +54,57 @@ int	check_duplicated(t_stack *stack_a)
 		return (0);
 	while (stack_a != NULL)
 	{
-		aux = stack_a->next;
+		aux = (*stack_a)->next;
 		while (aux != NULL)
 		{
-			if (stack_a->value == aux->value)
+			if ((*stack_a)->value == aux->value)
 				return (1);
 			aux = aux->next;
 		}
-		stack_a = stack_a->next;
+		stack_a = &(*stack_a)->next;
 	}
 	return (0);
 }
-//TODO: Acortar función
-//TODO: Modificar función para passar cada argumento y no todo del tirón
-int	check_nb_in_argv(char **str, t_stack *stack_a)
+
+t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 {
 	int i;
-	int	j;
-	int k;
-	int flag;
+	int	j;		
 	char **nb_aux;
+	t_stack *aux;
 
-	i = 1;
-	j = 1;
-	k = 0;
-	flag = 1;
-	nb_aux = NULL;
-	while(str[i])
-	{
-		while (str[i][k])
-		{
-			if (str[i][k] == 32)
-			{
-				nb_aux = ft_split(str[i], 32);
-				break ;
-			}
-			k++;
-		}
-		i++;
-	}	
 	i = 0;
+	j = 1;		
+	nb_aux = NULL;	
+	while (str[++i])
+	{
+		if (str[i] == 32)
+		{
+			nb_aux = ft_split(str, 32);			
+			break ;
+		}			
+	}			
 	if (nb_aux)
 	{
-		while (nb_aux[i])
-		{
-			check_and_save(nb_aux[i], stack_a);
-			i++;
-		}
+		i = -1;
+		while (nb_aux[++i])	
+			aux = check_and_save(nb_aux[i], stack_a);		
 	}
-	else
+	else		
+		aux = check_and_save(str, stack_a);
+	return (aux);
+}
+
+t_stack	*resort_ags(char **argv, t_stack **stack)
+{
+	int i;
+	t_stack	*aux;	
+
+	i = 1;	
+	while (argv[i])
 	{
-		while (str[j])
-		{
-			check_and_save(str[j], stack_a);
-			j++;	
-		}
+		aux = check_nb_in_argv(argv[i], stack);
+		i++;
 	}
-	return (flag);
+	return (aux);
 }
