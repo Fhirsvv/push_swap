@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 11:23:14 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:49:57 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,15 @@ int	check_duplicated(t_stack **stack_a)
 {
 	t_stack *aux;
 	
-	if (!stack_a)
+	if (!stack_a)		
 		return (0);
-	while (stack_a != NULL)
+	ft_printf("duplicated\n");	
+	ft_printf("stack value: %i\n", (*stack_a)->value);
+	while ((*stack_a)->next)
 	{
+		ft_printf("stack value: %i\n", (*stack_a)->value);
 		aux = (*stack_a)->next;
+		ft_printf("aux value: %i\n", aux->value);
 		while (aux != NULL)
 		{
 			if ((*stack_a)->value == aux->value)

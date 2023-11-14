@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 11:25:15 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 11:50:18 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ int main(int argc, char **argv)
     if (argc < 2)
         return (0);    
     stack_a = resort_ags(argv, &stack_a);        
-    while (stack_a)
-    {
-        ft_printf("stack_a: ");
-        ft_printf("%i\n ", stack_a->value);
-        stack_a = stack_a->next;
-    }
-    // check_duplicated(&stack_a);
+    // while (stack_a)
+    // {
+    //     ft_printf("stack_a: ");
+    //     ft_printf("%i\n ", stack_a->value);
+    //     stack_a = stack_a->next;
+    // }    
+    if (check_duplicated(&stack_a))
+        ft_printf("duplicados\n");
 }
