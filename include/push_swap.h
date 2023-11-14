@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 12:00:52 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:42:59 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,4 @@ t_stack	*ft_lstlast_ps(t_stack *lst);
 int	ft_lstsize_ps(t_stack *lst);
 t_stack	*resort_ags(char **argv, t_stack **stack);
 void	ft_error(void);
+int	ft_atoi_ps(const char *str);

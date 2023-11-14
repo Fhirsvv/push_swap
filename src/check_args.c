@@ -6,15 +6,16 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 12:06:23 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:43:14 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <limits.h>
 
 int	check_if_nb(char *str)
 {
-	int	i;
+	int	i;	
 
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
@@ -22,7 +23,7 @@ int	check_if_nb(char *str)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-		ft_error(void);
+		ft_error();
 	return (1);
 }
 
@@ -30,10 +31,10 @@ t_stack *check_and_save(char *str, t_stack **first_node)
 {
 	int flag;
 	t_stack *aux;
-	int nb;
+	unsigned long nb;
 	
 	// ft_printf("%s\n", str);
-	nb = ft_atoi(str);
+	nb = ft_atoi_ps(str);
 	flag = check_if_nb(str);
 	// ft_printf("Flag: %i\n", flag);
 	if (flag == 1)
@@ -51,18 +52,14 @@ int	check_duplicated(t_stack **stack_a)
 	t_stack *aux;
 	
 	if (!stack_a)		
-		return (0);
-	ft_printf("duplicated\n");	
-	ft_printf("stack value: %i\n", (*stack_a)->value);
+		return (0);		
 	while ((*stack_a)->next)
-	{
-		ft_printf("stack value: %i\n", (*stack_a)->value);
-		aux = (*stack_a)->next;
-		ft_printf("aux value: %i\n", aux->value);
+	{		
+		aux = (*stack_a)->next;		
 		while (aux != NULL)
 		{
 			if ((*stack_a)->value == aux->value)
-				ft_error(void);
+				ft_error();
 			aux = aux->next;
 		}
 		stack_a = &(*stack_a)->next;
