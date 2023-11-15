@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 17:37:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:08:09 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void    ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void    ft_pa(t_stack **stack_a, t_stack **stack_b);
 void    ft_pb(t_stack **stack_a, t_stack **stack_b);
 t_stack	*check_nb_in_argv(char *str, t_stack **stack_a);
-int	check_duplicated(t_stack **stack_a);
+void	check_duplicated(t_stack **stack_a);
 t_stack *check_and_save(char *str, t_stack **first_node);
 int	check_if_nb(char *str);
 t_stack	*ft_lstnew_ps(int content);

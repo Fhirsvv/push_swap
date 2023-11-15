@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 19:02:03 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:19:41 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	check_if_nb(char *str)
 		ft_error();
 	return (1);
 }
-//TODO: dividir funcion
 t_stack *check_and_save(char *str, t_stack **first_node)
 {
 	int flag;
@@ -43,24 +42,23 @@ t_stack *check_and_save(char *str, t_stack **first_node)
 	return (*first_node);
 }
 
-int	check_duplicated(t_stack **stack_a)
+void	check_duplicated(t_stack **stack_a)
 {
 	t_stack *aux;
 	
 	if (!stack_a)		
-		return (0);		
+		return ;		
 	while ((*stack_a)->next)
 	{		
 		aux = (*stack_a)->next;		
 		while (aux != NULL)
 		{
 			if ((*stack_a)->value == aux->value)			
-				return (1);			
+				ft_error();		
 			aux = aux->next;
 		}
 		stack_a = &(*stack_a)->next;
-	}
-	return (0);
+	}	
 }
 
 t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
@@ -80,15 +78,13 @@ t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 		}			
 	}			
 	if (nb_aux)
-	{//TODO: meter esto en otra función
+	{
 		i = -1;
-		while (nb_aux[++i])	
-		//TODO: change ft's
+		while (nb_aux[++i])			
 			aux = check_and_save(nb_aux[i], stack_a);
 		ft_free_split(nb_aux);
 	}
-	else
-		//TODO: change ft's
+	else		
 		aux = check_and_save(str, stack_a);		
 	return (aux);
 }

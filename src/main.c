@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 19:03:56 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:19:47 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void    ft_push_swap(t_stack **stack_a, t_stack **stack_b)
     
 }
 //*Leaks
-void    leaks(void)
-{
-    system("leaks -q push_swap");
-}
+// void    leaks(void)
+// {
+//     system("leaks -q push_swap");
+// }
 
 void	ft_free_split(char **str)
 {
@@ -58,13 +58,12 @@ void	ft_free_split(char **str)
     free(str);
 }
 
-//TODO: LIBERAR MEMORIA CUANDO PASAN ESPACIOS EN ARGS POR " "
 int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;    
 
-    atexit(leaks);
+    // atexit(leaks);
     stack_a = NULL;
     stack_b = NULL;
     if (argc < 2)
@@ -78,8 +77,7 @@ int main(int argc, char **argv)
     //     ft_printf("%i\n", aux->value);
     //     aux = aux->next;
     // }
-    if (check_duplicated(&stack_a))
-        ft_error();
+    check_duplicated(&stack_a);
     ft_push_swap(&stack_a, &stack_b);
     freeList(stack_a);
     freeList(stack_b);
