@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 15:01:43 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:05:57 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,4 @@ int find_min_pos(t_stack **stack, int min);
 int is_sorted(t_stack **stack);
 void	order_four(t_stack **stack_a, t_stack **stack_b);
 int	ft_lstsize_ps(t_stack **stack);
+void freeList(t_stack *stack);

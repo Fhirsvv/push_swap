@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:58:09 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 15:36:38 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:06:09 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,17 @@ int	ft_lstsize_ps(t_stack **stack)
 		i++;
 	}
 	return (i);
+}
+
+void freeList(t_stack *stack)
+{
+   t_stack *tmp;
+
+   while (stack != NULL)
+    {
+       tmp = stack;
+       stack = stack->next;
+       free(tmp);
+    }
+
 }

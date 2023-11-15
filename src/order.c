@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:38:51 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 15:36:56 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:49:15 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,26 +41,6 @@ void order_three(t_stack **stack_a)
 	}
 }
 
-void	order_five(t_stack **stack_a, t_stack **stack_b)
-{
-	int min;
-	int pos;	
-		
-	min = find_min(stack_a);		
-	pos = find_min_pos(stack_a, min);
-	if (pos <= 3)
-	{
-		while (pos-- > 1)
-			ft_ra(stack_a);				
-	}
-	else
-		while (pos++ <= 5)
-			ft_rra(stack_a);
-	ft_pb(stack_a, stack_b);
-	order_four(stack_a, stack_b);
-}
-
-
 void	order_four(t_stack **stack_a, t_stack **stack_b)
 {
 	int min;
@@ -82,4 +62,25 @@ void	order_four(t_stack **stack_a, t_stack **stack_b)
 	ft_pa(stack_a, stack_b);
 	ft_pa(stack_a, stack_b);
 }
+
+void	order_five(t_stack **stack_a, t_stack **stack_b)
+{
+	int min;
+	int pos;	
+		
+	min = find_min(stack_a);		
+	pos = find_min_pos(stack_a, min);
+	if (pos <= 3)
+	{
+		while (pos-- > 1)
+			ft_ra(stack_a);				
+	}
+	else
+		while (pos++ <= 5)
+			ft_rra(stack_a);
+	ft_pb(stack_a, stack_b);
+	order_four(stack_a, stack_b);
+}
+
+
 // printf("Macarrones con queso|n"); i = 9;
