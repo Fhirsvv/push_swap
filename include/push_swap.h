@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 16:05:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:37:57 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,4 @@ int is_sorted(t_stack **stack);
 void	order_four(t_stack **stack_a, t_stack **stack_b);
 int	ft_lstsize_ps(t_stack **stack);
 void freeList(t_stack *stack);
+void	ft_free_split(char **str);
