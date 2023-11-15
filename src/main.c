@@ -6,21 +6,21 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 19:29:05 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:22:44 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int is_sorted(t_stack *stack)
+int is_sorted(t_stack **stack)
 {
     if (!stack)
         return (0);
-    while (stack->next != NULL)
+    while ((*stack)->next != NULL)
     {
-        if (stack->value > (stack->next)->value)
+        if ((*stack)->value > ((*stack)->next)->value)
             return (0);
-        stack = stack->next;
+        stack = &(*stack)->next;
     }
     return (1);
 }
@@ -36,16 +36,16 @@ int main(int argc, char **argv)
         return (0);    
     stack_a = resort_ags(argv, &stack_a);        
     check_duplicated(&stack_a);
-    if (argc == 4)
+    if (argc == 4 && !(is_sorted(&stack_a)))
         order_three(&stack_a);
-    if (argc == 6)
-       order_five(&stack_a, &stack_b);
-    while (stack_a)
-    {
-        ft_printf("stack_a: ");
-        ft_printf("%i\n", stack_a->value);
-        stack_a = stack_a->next;
-    }
+    if (argc == 6)           
+       order_five(&stack_a, &stack_b);    
+    // while (stack_a)
+    // {
+    //     ft_printf("stack_a: ");
+    //     ft_printf("%i\n", stack_a->value);
+    //     stack_a = stack_a->next;
+    // }
     // while (stack_b)
     // {
     //     ft_printf("stack_b: ");
