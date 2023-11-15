@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:38:51 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 11:58:50 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:36:56 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,6 @@ void	order_five(t_stack **stack_a, t_stack **stack_b)
 			ft_rra(stack_a);
 	ft_pb(stack_a, stack_b);
 	order_four(stack_a, stack_b);
-	if (!is_sorted(stack_a))
-		order_three(stack_a);
-	ft_pa(stack_a, stack_b);
-	ft_pa(stack_a, stack_b);
 }
 
 
@@ -81,5 +77,9 @@ void	order_four(t_stack **stack_a, t_stack **stack_b)
 		while (pos++ <= 4)
 			ft_rra(stack_a);
 	ft_pb(stack_a, stack_b);
+	if (!is_sorted(stack_a))
+		order_three(stack_a);
+	ft_pa(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);
 }
 // printf("Macarrones con queso|n"); i = 9;

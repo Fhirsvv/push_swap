@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 17:35:16 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:12:08 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ t_stack *check_and_save(char *str, t_stack **first_node)
 	nb = ft_atoi_ps(str);
 	flag = check_if_nb(str);	
 	if (flag == 1)
-		{
+	{
 			aux = ft_lstnew_ps(nb);		
 			ft_lstadd_back_ps(first_node, aux);
-		}
+	}
+	else
+		return (NULL);
 	return (*first_node);
 }
 
@@ -54,8 +56,8 @@ int	check_duplicated(t_stack **stack_a)
 		aux = (*stack_a)->next;		
 		while (aux != NULL)
 		{
-			if ((*stack_a)->value == aux->value)
-				ft_error();
+			if ((*stack_a)->value == aux->value)			
+				return (1);			
 			aux = aux->next;
 		}
 		stack_a = &(*stack_a)->next;

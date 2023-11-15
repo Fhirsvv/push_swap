@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 11:56:57 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:01:43 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ t_stack	*ft_lstnew_ps(int content);
 void	ft_lstadd_back_ps(t_stack **lst, t_stack *new);
 void	ft_lstadd_front_ps(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast_ps(t_stack *lst);
-int	ft_lstsize_ps(t_stack *lst);
 t_stack	*resort_ags(char **argv, t_stack **stack);
 void	ft_error(void);
 int	ft_atoi_ps(const char *str);
@@ -52,3 +51,4 @@ void	order_five(t_stack **stack_a, t_stack **stack_b);
 int find_min_pos(t_stack **stack, int min);
 int is_sorted(t_stack **stack);
 void	order_four(t_stack **stack_a, t_stack **stack_b);
+int	ft_lstsize_ps(t_stack **stack);

@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:40:56 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 15:43:36 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:02:12 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,11 @@ t_stack	*ft_lstlast_ps(t_stack *lst)
 	return (lst);
 }
 
-int	ft_lstsize_ps(t_stack *lst)
-{
-	int	i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst -> next;
-		i++;
-	}
-	return (i);
-}
-
 void	ft_error(void)
 {	
-	ft_printf("%s%s", COLOR_RED, "Error\n ");
-	exit(EXIT_FAILURE);
+	ft_printf("%s\n", "Error");
+	return ;
+	// exit(EXIT_FAILURE);
 }
 
 int	ft_atoi_ps(const char *str)

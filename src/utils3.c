@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:58:09 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 12:34:04 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:36:38 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,21 @@ int find_min_pos(t_stack **stack, int min)
 
         count++;
         stack = &(*stack)->next;
+		// printf("Esta es la línea 42\n");
     }
 	// ft_printf("find_min_pos:%i\n", count);
     return (count);
+}
+
+int	ft_lstsize_ps(t_stack **stack)
+{
+	int	i;
+
+	i = 0;
+	while ((*stack))
+	{
+		stack = &(*stack) -> next;
+		i++;
+	}
+	return (i);
 }

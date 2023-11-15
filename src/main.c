@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 12:33:42 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:36:32 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,39 @@ int is_sorted(t_stack **stack)
     return (1);
 }
 
+void    ft_push_swap()
+{
+    
+}
 int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    
+    t_stack *aux;
+    int s_size;
+
     stack_a = NULL;
     stack_b = NULL;
     if (argc < 2)
         return (0);    
-    stack_a = resort_ags(argv, &stack_a);        
-    check_duplicated(&stack_a);
-    if (argc == 4 && !(is_sorted(&stack_a)))
+    stack_a = resort_ags(argv, &stack_a);
+    aux = stack_a;
+    // while (aux)
+    // {
+    //     ft_printf("aux: ");
+    //     ft_printf("%i\n", aux->value);
+    //     aux = aux->next;
+    // }
+    if (check_duplicated(&stack_a))
+        ft_error();
+    s_size = ft_lstsize_ps(&stack_a);
+    if (s_size == 2 && !(is_sorted(&stack_a)))
+        ft_sa(&stack_a);
+    if (s_size == 3 && !(is_sorted(&stack_a)))
         order_three(&stack_a);
-    if (argc == 6)           
+    if (s_size == 4 && !(is_sorted(&stack_a)))
+        order_four(&stack_a, &stack_b);
+    if (s_size == 5 && !(is_sorted(&stack_a)))           
        order_five(&stack_a, &stack_b);    
     // while (stack_a)
     // {

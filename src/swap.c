@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:00:12 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 15:49:13 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:23:08 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int    ft_swap(t_stack **stack)
 {    
     t_stack *aux_stack;
 
-    if (ft_lstsize_ps(*stack) < 2)
+    if (ft_lstsize_ps(stack) < 2)
         return (0);
 	aux_stack = *stack;
 	*stack = (*stack)->next;
