@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 16:06:28 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:19:25 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void    leaks(void)
     system("leaks -q push_swap");
 }
 
+
+//TODO: LIBERAR MEMORIA CUANDO PASEN ARGS POR " "
 int main(int argc, char **argv)
 {
     t_stack *stack_a;

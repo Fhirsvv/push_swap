@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 14:12:08 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:21:33 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_if_nb(char *str)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-		ft_error();
+		return (0);
 	return (1);
 }
 
@@ -40,8 +40,6 @@ t_stack *check_and_save(char *str, t_stack **first_node)
 			aux = ft_lstnew_ps(nb);		
 			ft_lstadd_back_ps(first_node, aux);
 	}
-	else
-		return (NULL);
 	return (*first_node);
 }
 
@@ -79,8 +77,8 @@ t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 	{
 		if (str[i] == 32)
 		{
-			nb_aux = ft_split(str, 32);			
-			break ;
+			nb_aux = ft_split(str, 32);
+			break ;			
 		}			
 	}			
 	if (nb_aux)
@@ -90,7 +88,7 @@ t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 			aux = check_and_save(nb_aux[i], stack_a);		
 	}
 	else		
-		aux = check_and_save(str, stack_a);
+		aux = check_and_save(str, stack_a);	
 	return (aux);
 }
 
