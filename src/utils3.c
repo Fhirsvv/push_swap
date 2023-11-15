@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:58:09 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 16:06:09 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:57:23 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,19 @@ void freeList(t_stack *stack)
     }
 
 }
+
+// t_stack *ft_save(char *str, t_stack **first_node)
+// {
+// 	int flag;
+// 	t_stack *aux;
+// 	unsigned long nb;
+		
+// 	nb = ft_atoi_ps(str);
+// 	flag = check_if_nb(str);	
+// 	if (flag == 1)
+// 	{
+// 			aux = ft_lstnew_ps(nb);		
+// 			ft_lstadd_back_ps(first_node, aux);
+// 	}
+// 	return (*first_node);
+// }

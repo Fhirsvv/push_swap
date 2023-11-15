@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 18:08:28 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:02:03 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	check_if_nb(char *str)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-		return (0);
+		ft_error();
 	return (1);
 }
-
+//TODO: dividir funcion
 t_stack *check_and_save(char *str, t_stack **first_node)
 {
 	int flag;
@@ -34,7 +34,7 @@ t_stack *check_and_save(char *str, t_stack **first_node)
 	unsigned long nb;
 		
 	nb = ft_atoi_ps(str);
-	flag = check_if_nb(str);	
+	flag = check_if_nb(str);
 	if (flag == 1)
 	{
 			aux = ft_lstnew_ps(nb);		
@@ -80,13 +80,15 @@ t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 		}			
 	}			
 	if (nb_aux)
-	{
+	{//TODO: meter esto en otra función
 		i = -1;
 		while (nb_aux[++i])	
+		//TODO: change ft's
 			aux = check_and_save(nb_aux[i], stack_a);
 		ft_free_split(nb_aux);
 	}
-	else		
+	else
+		//TODO: change ft's
 		aux = check_and_save(str, stack_a);		
 	return (aux);
 }
@@ -100,6 +102,8 @@ t_stack	*resort_ags(char **argv, t_stack **stack)
 	while (argv[i])
 	{
 		aux = check_nb_in_argv(argv[i], stack);
+		// if(aux == NULL)
+		// 	return (NULL);
 		i++;
 	}
 	return (aux);

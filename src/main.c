@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 18:07:46 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:03:56 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int main(int argc, char **argv)
     if (argc < 2)
         return (0);    
     stack_a = resort_ags(argv, &stack_a);
+    // if (stack_a == NULL)
+    //     ft_error();
     // while (aux)
     // {
     //     ft_printf("aux: ");
