@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 16:21:33 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:08:28 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,11 @@ int	check_duplicated(t_stack **stack_a)
 
 t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 {
-	int i;
-	int	j;		
+	int i;			
 	char **nb_aux;
 	t_stack *aux;
 
-	i = 0;
-	j = 1;		
+	i = 0;	
 	nb_aux = NULL;	
 	while (str[++i])
 	{
@@ -85,10 +83,11 @@ t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 	{
 		i = -1;
 		while (nb_aux[++i])	
-			aux = check_and_save(nb_aux[i], stack_a);		
+			aux = check_and_save(nb_aux[i], stack_a);
+		ft_free_split(nb_aux);
 	}
 	else		
-		aux = check_and_save(str, stack_a);	
+		aux = check_and_save(str, stack_a);		
 	return (aux);
 }
 

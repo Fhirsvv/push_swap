@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 16:19:25 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:07:46 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,19 @@ void    leaks(void)
     system("leaks -q push_swap");
 }
 
+void	ft_free_split(char **str)
+{
+    int i;
+    i = 0;
+    while (str[i])
+    {    
+        free(str[i]);           
+        i++;
+    }
+    free(str);
+}
 
-//TODO: LIBERAR MEMORIA CUANDO PASEN ARGS POR " "
+//TODO: LIBERAR MEMORIA CUANDO PASAN ESPACIOS EN ARGS POR " "
 int main(int argc, char **argv)
 {
     t_stack *stack_a;
