@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/14 17:39:14 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:39:15 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,15 @@ void	ft_lstadd_front_ps(t_stack **lst, t_stack *new)
 {
 	new->next = *lst;
 	*lst = new;
+}
+
+t_stack	*ft_lstlast_ps(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

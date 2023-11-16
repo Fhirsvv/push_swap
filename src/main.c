@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 11:00:20 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:15:37 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void	ft_free_split(char **str)
 int main(int argc, char **argv)
 {
     t_stack *stack_a;
-    t_stack *stack_b;    
+    t_stack *stack_b;
+    // t_stack *aux;   
 
     // atexit(leaks);
     stack_a = NULL;
@@ -69,18 +70,26 @@ int main(int argc, char **argv)
     if (argc < 2)
         return (0);    
     stack_a = resort_ags(argv, &stack_a);
-    // if (stack_a == NULL)
-    //     ft_error();
+    assign_index(&stack_a, 1, ft_lstsize_ps(&stack_a));
+    // aux = stack_a;
+    if (stack_a == NULL)
+        ft_error();
     // while (aux)
     // {
     //     ft_printf("aux: ");
     //     ft_printf("%i\n", aux->value);
     //     aux = aux->next;
     // }
-    check_duplicated(&stack_a);
-    ft_push_swap(&stack_a, &stack_b);
-    freeList(stack_a);
-    freeList(stack_b);
+    while (stack_a)
+    {
+        ft_printf("%s stack_a -> ", COLOR_RESET);
+        ft_printf("nb: %i index: %i\n", stack_a->value, stack_a->index);
+        stack_a = stack_a->next;
+    }
+    // check_duplicated(&stack_a);
+    // ft_push_swap(&stack_a, &stack_b);
+    // freeList(stack_a);
+    // freeList(stack_b);
     // while (stack_a)
     // {
     //     ft_printf("stack_a: ");

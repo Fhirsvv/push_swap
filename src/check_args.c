@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 12:40:28 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:09:26 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ t_stack	*resort_ags(char **argv, t_stack **stack)
 	while (argv[i])
 	{
 		aux = check_nb_in_argv(argv[i], stack);
-		// if(aux == NULL)
-		// 	return (NULL);
 		i++;
 	}
 	return (aux);

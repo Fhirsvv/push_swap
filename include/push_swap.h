@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 13:19:53 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:51:35 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
 # include "../libft/get_next_line.h"
+# define COLOR_RED "\033[0;31m"
+# define COLOR_GREEN "\033[0;32m"
+# define COLOR_BLUE "\033[0;36m"
+# define COLOR_RESET "\033[0m"
+
 
 typedef struct s_stack
 {
@@ -45,7 +50,6 @@ void		ft_lstadd_front_ps(t_stack **lst, t_stack *new);
 t_stack		*ft_lstlast_ps(t_stack *lst);
 t_stack		*resort_ags(char **argv, t_stack **stack);
 void		ft_error(void);
-int			ft_atoi_ps(const char *str);
 int			find_min(t_stack **stack);
 void		order_five(t_stack **stack_a, t_stack **stack_b);
 int			find_min_pos(t_stack **stack, int min);
@@ -54,3 +58,5 @@ void		order_four(t_stack **stack_a, t_stack **stack_b);
 int			ft_lstsize_ps(t_stack **stack);
 void		freeList(t_stack *stack);
 void		ft_free_split(char **str);
+void		assign_index(t_stack **stack, int index, int stack_size);
+int			find_min_without_stack(t_stack **stack);
