@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:40:56 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 19:00:01 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:39:26 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ t_stack	*ft_lstlast_ps(t_stack *lst)
 void	ft_error(void)
 {	
 	ft_printf("%s\n", "Error");
-	// return ;
 	exit(EXIT_FAILURE);
 }
 
@@ -49,12 +48,24 @@ int	ft_atoi_ps(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		result = result * 10 + (*str - '0');
-		if (result > INT_MAX && sign > 0)
+		if (result > LONG_MAX && sign > 0)
 			ft_error();
-		if (result > INT_MAX && sign < 0)
+		if (result > LONG_MAX && sign < 0)
 			ft_error();
 		str++;
 	}
 	return (result * sign);
 }
-			
+
+void freeList(t_stack *stack)
+{
+   t_stack *tmp;
+
+   while (stack != NULL)
+    {
+       tmp = stack;
+       stack = stack->next;
+       free(tmp);
+    }
+
+}

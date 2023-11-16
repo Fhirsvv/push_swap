@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 19:19:41 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:40:28 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_stack *check_and_save(char *str, t_stack **first_node)
 	t_stack *aux;
 	unsigned long nb;
 		
-	nb = ft_atoi_ps(str);
+	nb = ft_atoi(str);
 	flag = check_if_nb(str);
 	if (flag == 1)
 	{
