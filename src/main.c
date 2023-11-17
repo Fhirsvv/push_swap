@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 11:55:55 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:46:10 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    // t_stack *aux;   
+    t_stack *aux;   
 
     // atexit(leaks);
     stack_a = NULL;
@@ -72,32 +72,32 @@ int main(int argc, char **argv)
     stack_a = resort_ags(argv, &stack_a);
     check_duplicated(&stack_a);
     assign_index(&stack_a, 1);
-    // aux = stack_a;
+    aux = stack_a;
     // if (stack_a == NULL)
     //     ft_error();
     // while (aux)
     // {
     //     ft_printf("aux: ");
-    //     ft_printf("%i\n", aux->value);
+    //     ft_printf("nb: %i index: %i\n", aux->value, aux->index);
     //     aux = aux->next;
     // }
-    while (stack_a)
-    {
-        ft_printf("%s stack_a -> ", COLOR_RESET);
-        ft_printf("nb: %i index: %i\n", stack_a->value, stack_a->index);
-        stack_a = stack_a->next;
-    }
+    // while (stack_a)
+    // {
+    //     ft_printf("%s stack_a -> ", COLOR_RESET);
+    //     ft_printf("nb: %i index: %i\n", stack_a->value, stack_a->index);
+    //     stack_a = stack_a->next;
+    // }
     find_first_occurrence(&stack_a, 20);
     find_last_occurrence(&stack_a, 20);
     ft_push_swap(&stack_a, &stack_b);
-    freeList(stack_a);
-    freeList(stack_b);
     // while (stack_a)
     // {
     //     ft_printf("stack_a: ");
     //     ft_printf("%i\n", stack_a->value);
     //     stack_a = stack_a->next;
     // }
+    freeList(stack_a);
+    freeList(stack_b);
     // while (stack_b)
     // {
     //     ft_printf("stack_b: ");

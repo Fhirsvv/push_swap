@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:38:51 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/15 15:49:15 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:48:26 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	order_four(t_stack **stack_a, t_stack **stack_b)
 	int pos;	
 		
 	min = find_min(stack_a);		
-	pos = find_min_pos(stack_a, min);
+	pos = find_pos_value(stack_a, min);
 	if (pos <= 2)
 	{
 		while (pos-- > 1)
@@ -69,7 +69,7 @@ void	order_five(t_stack **stack_a, t_stack **stack_b)
 	int pos;	
 		
 	min = find_min(stack_a);		
-	pos = find_min_pos(stack_a, min);
+	pos = find_pos_value(stack_a, min);
 	if (pos <= 3)
 	{
 		while (pos-- > 1)

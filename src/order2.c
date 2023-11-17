@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 11:43:19 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:47:20 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int	find_first_occurrence(t_stack **stack, int chunk_size)
 		while (i <= chunk_size)
 		{	
 			if (aux->index == i)
-			{				
+			{
+				// ft_printf("FIRST: %i\n", aux->index);
 				return (aux->index);
 			}
 			i++;
@@ -80,6 +81,6 @@ int	find_last_occurrence(t_stack **stack, int chunk_size)
 		}
 		aux = aux->next;
 	}
-	ft_printf("LAST: %i\n", pos);
+	// ft_printf("LASTT: %i\n", pos);
 	return (pos);
 }
