@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:40:56 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 11:18:10 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:03:08 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ void	assign_index(t_stack **stack, int index)
 	t_stack *first;	
 	int min;
 	int stack_size;
-	
-	min = INT_MAX;
+		
 	first = (*stack);
 	stack_size = ft_lstsize_ps(stack);
 	min = find_min_without_stack(stack);	
