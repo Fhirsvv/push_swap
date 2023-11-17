@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:16:52 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 18:25:26 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:30:57 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 int find_min_without_stack(t_stack **stack)
 {
 	int	min;
-
-	min = (*stack)->value;
+	
 	while ((*stack))
-	{
-		//TODO: VER XQ SIEMPRE PILLA EL MÍNIMO VALOR
-		if (min > (*stack)->value && ((*stack)->index == 0))
+	{		
+		if (((*stack)->index == 0) && (min > (*stack)->value))
 			min = (*stack)->value;
 		stack = &(*stack)->next;
 	}

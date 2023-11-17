@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 13:39:15 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:17:30 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_stack	*ft_lstnew_ps(int content)
 	new = malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
+	new->index = 0;
 	new->value = content;
 	new->next = NULL;
 	return (new);

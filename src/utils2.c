@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:40:56 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 18:18:28 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:25:03 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void freeList(t_stack *stack)
 
 void	assign_index(t_stack **stack, int index, int stack_size)
 {
-	t_stack *first;
+	t_stack *first;	
 	int min;
 
 	ft_printf("%sindice: %i\n",COLOR_RESET, index);
