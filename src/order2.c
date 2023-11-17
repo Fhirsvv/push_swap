@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 11:24:25 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:43:19 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,22 @@ int	find_first_occurrence(t_stack **stack, int chunk_size)
 	int i;
 	int	pos;
 
-	i = 1;
 	pos = 1;
 	aux = *stack;
-	while (i <= chunk_size)
-	{
-		while(aux)
-		{
-			if (i == aux->index)
-			{
-				ft_printf("La posMIN: %i\n", aux->index);
+	while (aux)
+	{		
+		i = 1;
+		while (i <= chunk_size)
+		{	
+			if (aux->index == i)
+			{				
 				return (aux->index);
 			}
-			aux = aux->next;
+			i++;
 		}
-		i++;
+		aux = aux->next;
 	}	
-	return (i);
+	return (pos);
 }
 
 int	find_last_occurrence(t_stack **stack, int chunk_size)
@@ -68,19 +67,19 @@ int	find_last_occurrence(t_stack **stack, int chunk_size)
 	int i;
 	int	pos;
 
-	i = 1;
-	pos = 0;
+	pos = 1;
 	aux = *stack;
-	while (i <= chunk_size)
-	{
-		while(aux)
-		{
-			if (i == aux->index)
-				pos = aux->index;							
-			aux = aux->next;
+	while (aux)
+	{		
+		i = 1;
+		while (i <= chunk_size)
+		{	
+			if (aux->index == i)		
+				pos = aux->index;
+			i++;
 		}
-		i++;
-	}	
-	ft_printf("La posMAX: %i\n", pos);
+		aux = aux->next;
+	}
+	ft_printf("LAST: %i\n", pos);
 	return (pos);
 }

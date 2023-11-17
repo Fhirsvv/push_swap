@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:58:09 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 14:17:19 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:51:44 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,3 +91,11 @@ int	ft_lstsize_ps(t_stack **stack)
 	return (i);
 }
 
+// int	find_pos(int nb, t_stack **stack)
+// {
+// 	while ((/* condition */))
+// 	{
+// 		/* code */
+// 	}
+	
+// }
