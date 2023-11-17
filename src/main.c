@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 11:06:23 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:19:40 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     if (argc < 2)
         return (0);    
     stack_a = resort_ags(argv, &stack_a);
-    assign_index(&stack_a, 1, ft_lstsize_ps(&stack_a));
+    assign_index(&stack_a, 1);
     // aux = stack_a;
     // if (stack_a == NULL)
     //     ft_error();

@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 11:03:20 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:18:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		order_four(t_stack **stack_a, t_stack **stack_b);
 int			ft_lstsize_ps(t_stack **stack);
 void		freeList(t_stack *stack);
 void		ft_free_split(char **str);
-void		assign_index(t_stack **stack, int index, int stack_size);
+void		assign_index(t_stack **stack, int index);
 int			find_min_without_stack(t_stack **stack);
 int			find_first_occurrence(t_stack **stack, int chunk_size);
 int			find_last_occurrence(t_stack **stack, int chunk_size);
