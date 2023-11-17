@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 18:15:37 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:06:23 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,16 @@ int main(int argc, char **argv)
     stack_a = resort_ags(argv, &stack_a);
     assign_index(&stack_a, 1, ft_lstsize_ps(&stack_a));
     // aux = stack_a;
-    if (stack_a == NULL)
-        ft_error();
+    // if (stack_a == NULL)
+    //     ft_error();
     // while (aux)
     // {
     //     ft_printf("aux: ");
     //     ft_printf("%i\n", aux->value);
     //     aux = aux->next;
     // }
+    find_first_occurrence(&stack_a, 20);
+    find_last_occurrence(&stack_a, 20);
     while (stack_a)
     {
         ft_printf("%s stack_a -> ", COLOR_RESET);
