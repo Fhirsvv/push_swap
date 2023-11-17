@@ -1,5 +1,5 @@
 SRC_DIR = ./src
-SRC = check_args.c main.c push.c reverse_rotate.c rotate.c swap.c utils.c utils2.c utils3.c order.c
+SRC = check_args.c main.c push.c reverse_rotate.c rotate.c swap.c utils.c utils2.c utils3.c order.c order2.c utils4.c
 
 OBJS = $(addprefix $(SRC_DIR)/, $(SRC:.c=.o))
 BONUS_OBJS = $(addprefix $(BONUS_DIR)/, $(BONUS:.c=.o))
