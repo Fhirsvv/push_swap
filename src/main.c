@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 16:03:00 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:20:47 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,25 @@ int is_sorted(t_stack **stack)
         stack = &(*stack)->next;
     }
     return (1);
+}
+
+void    ft_print(t_stack **stack_a, t_stack **stack_b)
+{
+    while ((*stack_a))
+    {
+        ft_printf("%s (*stack_a) -> ", COLOR_RESET);
+        ft_printf("nb: %i index: %i\n", (*stack_a)->value, (*stack_a)->index);
+        stack_a = &(*stack_a)->next;
+    }
+    if (*stack_b)
+        ft_printf("---------------------------\n");
+    while ((*stack_b))
+    {
+        ft_printf("%s stack_b -> ", COLOR_RESET);
+        ft_printf("nb: %i index: %i\n", (*stack_b)->value, (*stack_b)->index);
+        stack_b = &(*stack_b)->next;
+    }
+    
 }
 
 void    ft_push_swap(t_stack **stack_a, t_stack **stack_b)
@@ -91,14 +110,14 @@ int main(int argc, char **argv)
     // }
     ft_push_swap(&stack_a, &stack_b);    
     // min_to_top(&stack_b);
-    ft_printf("---------------------------\n");
-    aux = stack_b;
-    while (aux)
-    {
-        ft_printf("aux: ");
-        ft_printf("nb: %i index: %i\n", aux->value, aux->index);
-        aux = aux->next;
-    }
+    // ft_printf("---------------------------\n");
+    // aux = stack_b;
+    // while (aux)
+    // {
+    //     ft_printf("aux: ");
+    //     ft_printf("nb: %i index: %i\n", aux->value, aux->index);
+    //     aux = aux->next;
+    // }
     // while (stack_b)
     // {
     //     ft_printf("stack_a: ");

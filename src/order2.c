@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 16:04:26 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:22:33 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 		Paso 4: Buscar (con el ínidice) la primera coincidencia con el chunk 1
 *:
 		Paso 5: Igual que paso 4 pero con la última coincidencia
-TODO:
+*:
 		Paso 6: Ver cual es más eficiente de poner en el top del stack A
-TODO:
+*:
 		Paso 7: Verificar que el número en el top del stack B sea el menor de todos
-TODO:
+*:
 		Paso 8: Pushear el top de stack A a stack B
 TODO:
 		Repetir proceso hasta acabar con todo el chunk 1 y posteroirm ente con todos los chunks
@@ -45,17 +45,13 @@ int	find_first_occurrence(t_stack **stack, int chunk_size)
 
 	pos = 1;
 	aux = *stack;
-	ft_printf("CHUNK_SIZE: %i\n", chunk_size);
 	while (aux)
 	{		
 		i = 1;
 		while (i <= chunk_size)
 		{
-			if (aux->index == i)
-			{
-				ft_printf("FIRST IN FUNCTION: %i\n", aux->index);
+			if (aux->index == i)			
 				return (aux->index);
-			}
 			i++;
 		}
 		aux = aux->next;
@@ -97,7 +93,7 @@ void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 	lst_size = ft_lstsize_ps(stack_a);
 	aux_size = lst_size;
 	ft_printf("size :%i\n", lst_size);
-	while(lst_size > 0)
+	if(lst_size > 0)
 	{
 		first = find_pos_index(stack_a,
 			find_first_occurrence(stack_a, lst_size / 5));
@@ -106,23 +102,25 @@ void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 		ft_printf("Last :%i\n", last);
 		if ((first - 1) < (lst_size - last))
 		{
-			while (first > 1)
+			while (first-- >= 1)
 			{
 				ft_ra(stack_a);
-				first--;
+				// first--;
+				ft_print(stack_a, stack_b);
 			}
 		}
 		else
 		{
-			while (last < lst_size)
+			while (last++ <= lst_size)
 			{
 				ft_rra(stack_a);
-				last++;
+				// last++;
+				ft_print(stack_a, stack_b);
 			}
 		}
 	min_to_top(stack_b);
 	ft_pb(stack_a, stack_b);
-	lst_size--;
+	ft_print(stack_a, stack_b);
 	}	
 }
 
