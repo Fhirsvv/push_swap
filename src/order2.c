@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 15:33:20 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:04:26 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int	find_last_occurrence(t_stack **stack, int chunk_size)
 	return (pos);
 }
 
+//TODO: Arreglar recursividad(chunk_size para ir avanzando)
 void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 {
 	int	lst_size;
@@ -96,7 +97,7 @@ void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 	lst_size = ft_lstsize_ps(stack_a);
 	aux_size = lst_size;
 	ft_printf("size :%i\n", lst_size);
-	while(aux_size > 0)
+	while(lst_size > 0)
 	{
 		first = find_pos_index(stack_a,
 			find_first_occurrence(stack_a, lst_size / 5));
@@ -119,35 +120,28 @@ void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 				last++;
 			}
 		}
-	//TODO: Antes de hacer pb poner el mínimo que se encuentre en stack_b en el top;
 	min_to_top(stack_b);
 	ft_pb(stack_a, stack_b);
-	aux_size--;
+	lst_size--;
 	}	
 }
 
 void min_to_top(t_stack **stack)
-{
-	int min;
+{	
 	int pos;
 	int size;
 	
-	size = ft_lstsize_ps(stack);
-	ft_printf("size: %i\n", size);
-	min = find_min(stack);
-	ft_printf("MIN: %i\n", min);
-	pos = find_pos_value(stack, min);
-	ft_printf("POS: %i\n", pos);
+	if (! stack || !(*stack))
+		return ;
+	size = ft_lstsize_ps(stack);			
+	pos = find_pos_value(stack, find_min(stack));
 	if (pos != 1 && pos <= size / 2)
 	{
 		while (pos > 1)
 		{
-
-			ft_printf("holo");
 			ft_ra(stack);
 			pos--;
 		}
-
 	}
 	else if (pos != 1 && pos > size / 2)
 	{
@@ -160,15 +154,15 @@ void min_to_top(t_stack **stack)
 }
 
 void max_to_top(t_stack **stack)
-{
-	int max;
+{	
 	int pos;
 	int size;
 	
-	size = ft_lstsize_ps(stack);
-	max = find_max(stack);
-	pos = find_pos_value(stack, max);
-	if (pos != 1 && pos < size / 2)
+	if (! stack || !(*stack))
+		return ;
+	size = ft_lstsize_ps(stack);	
+	pos = find_pos_value(stack, find_max(stack));
+	if (pos != 1 && pos < size / 2 && stack)
 	{
 		while (pos > 1)
 		{
@@ -177,7 +171,7 @@ void max_to_top(t_stack **stack)
 		}
 
 	}
-	else if (pos != 1 && pos >= size / 2)
+	else if (pos != 1 && pos >= size / 2 && stack)
 	{
 		while (pos <= size)
 		{

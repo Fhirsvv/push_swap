@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:19:46 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 15:31:39 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:03:00 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,22 +89,22 @@ int main(int argc, char **argv)
     //     ft_printf("nb: %i index: %i\n", stack_a->value, stack_a->index);
     //     stack_a = stack_a->next;
     // }
-    // ft_push_swap(&stack_a, &stack_b);
-    max_to_top(&stack_a);
-    // aux = stack_b;
-    // while (aux)
-    // {
-    //     ft_printf("aux: ");
-    //     ft_printf("nb: %i index: %i\n", aux->value, aux->index);
-    //     aux = aux->next;
-    // }
+    ft_push_swap(&stack_a, &stack_b);    
+    // min_to_top(&stack_b);
     ft_printf("---------------------------\n");
-    while (stack_a)
+    aux = stack_b;
+    while (aux)
     {
-        ft_printf("stack_a: ");
-        ft_printf("%i\n", stack_a->value);
-        stack_a = stack_a->next;
+        ft_printf("aux: ");
+        ft_printf("nb: %i index: %i\n", aux->value, aux->index);
+        aux = aux->next;
     }
+    // while (stack_b)
+    // {
+    //     ft_printf("stack_a: ");
+    //     ft_printf("%i\n", stack_b->value);
+    //     stack_b = stack_b->next;
+    // }
     freeList(stack_a);
     freeList(stack_b);
     // while (stack_b)
