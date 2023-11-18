@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 15:06:15 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:16:54 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,4 @@ void		order_til_hundred(t_stack **stack_a, t_stack **stack_b);
 void		min_to_top(t_stack **stack);
 void		max_to_top(t_stack **stack);
 int			find_max(t_stack **stack);
+void    ft_print(t_stack **stack_a, t_stack **stack_b);
