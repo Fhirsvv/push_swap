@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 13:49:27 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:06:15 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,7 @@ int			find_first_occurrence(t_stack **stack, int chunk_size);
 int			find_last_occurrence(t_stack **stack, int chunk_size);
 int			find_pos_index(t_stack **stack, int nb);
 int			find_pos_value(t_stack **stack, int nb);
-t_stack		*order_til_hundred(t_stack **stack_a, t_stack **stack_b);
+void		order_til_hundred(t_stack **stack_a, t_stack **stack_b);
+void		min_to_top(t_stack **stack);
+void		max_to_top(t_stack **stack);
+int			find_max(t_stack **stack);

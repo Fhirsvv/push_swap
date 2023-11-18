@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 14:25:24 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:33:20 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ int	find_first_occurrence(t_stack **stack, int chunk_size)
 
 	pos = 1;
 	aux = *stack;
+	ft_printf("CHUNK_SIZE: %i\n", chunk_size);
 	while (aux)
 	{		
 		i = 1;
 		while (i <= chunk_size)
-		{	
+		{
 			if (aux->index == i)
 			{
-				// ft_printf("FIRST: %i\n", aux->index);
+				ft_printf("FIRST IN FUNCTION: %i\n", aux->index);
 				return (aux->index);
 			}
 			i++;
@@ -85,19 +86,22 @@ int	find_last_occurrence(t_stack **stack, int chunk_size)
 	return (pos);
 }
 
-t_stack	*order_til_hundred(t_stack **stack_a, t_stack **stack_b)
+void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 {
 	int	lst_size;
 	int first;
 	int last;
+	int	aux_size;
 	
 	lst_size = ft_lstsize_ps(stack_a);
+	aux_size = lst_size;
 	ft_printf("size :%i\n", lst_size);
-	while(lst_size > 0)
+	while(aux_size > 0)
 	{
-		first = find_first_occurrence(stack_a, lst_size / 5);
+		first = find_pos_index(stack_a,
+			find_first_occurrence(stack_a, lst_size / 5));
 		ft_printf("First :%i\n", first);
-		last = find_last_occurrence(stack_a, lst_size / 5);
+		last = find_pos_index(stack_a, find_last_occurrence(stack_a, lst_size / 5));
 		ft_printf("Last :%i\n", last);
 		if ((first - 1) < (lst_size - last))
 		{
@@ -115,8 +119,70 @@ t_stack	*order_til_hundred(t_stack **stack_a, t_stack **stack_b)
 				last++;
 			}
 		}
+	//TODO: Antes de hacer pb poner el mínimo que se encuentre en stack_b en el top;
+	min_to_top(stack_b);
 	ft_pb(stack_a, stack_b);
-	lst_size--;
+	aux_size--;
+	}	
+}
+
+void min_to_top(t_stack **stack)
+{
+	int min;
+	int pos;
+	int size;
+	
+	size = ft_lstsize_ps(stack);
+	ft_printf("size: %i\n", size);
+	min = find_min(stack);
+	ft_printf("MIN: %i\n", min);
+	pos = find_pos_value(stack, min);
+	ft_printf("POS: %i\n", pos);
+	if (pos != 1 && pos <= size / 2)
+	{
+		while (pos > 1)
+		{
+
+			ft_printf("holo");
+			ft_ra(stack);
+			pos--;
+		}
+
 	}
-	return (NULL);
+	else if (pos != 1 && pos > size / 2)
+	{
+		while (pos <= size)
+		{
+			ft_rra(stack);
+			pos++;
+		}
+	}
+}
+
+void max_to_top(t_stack **stack)
+{
+	int max;
+	int pos;
+	int size;
+	
+	size = ft_lstsize_ps(stack);
+	max = find_max(stack);
+	pos = find_pos_value(stack, max);
+	if (pos != 1 && pos < size / 2)
+	{
+		while (pos > 1)
+		{
+			ft_ra(stack);
+			pos--;
+		}
+
+	}
+	else if (pos != 1 && pos >= size / 2)
+	{
+		while (pos <= size)
+		{
+			ft_rra(stack);
+			pos++;
+		}
+	}
 }
