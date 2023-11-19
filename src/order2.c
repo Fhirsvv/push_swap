@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:21:14 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 16:22:33 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:40:30 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,90 +37,90 @@ TODO:
 		Repetir hasta tener A lleno.
 */
 
-int	find_first_occurrence(t_stack **stack, int chunk_size)
-{
-	t_stack	*aux;
+int	find_first_occurrence(t_stack **stack, int first, int last)
+{	
 	int i;
 	int	pos;
 
-	pos = 1;
-	aux = *stack;
-	while (aux)
+	pos = 1;	
+	while (*stack)
 	{		
-		i = 1;
-		while (i <= chunk_size)
+		i = first;
+		while (i <= last)
 		{
-			if (aux->index == i)			
-				return (aux->index);
+			if ((*stack)->index == i)
+			{
+				// ft_printf("%s, find_last_occurrence: Index: %i\n", COLOR_RED,(*stack)->index);
+				return ((*stack)->index);
+			}
 			i++;
 		}
-		aux = aux->next;
-	}	
+		stack = &(*stack)->next;
+	}
 	return (pos);
 }
 
-int	find_last_occurrence(t_stack **stack, int chunk_size)
-{
-	t_stack	*aux;
+int	find_last_occurrence(t_stack **stack, int first, int last)
+{	
 	int i;
 	int	pos;
 
-	pos = 1;
-	aux = *stack;
-	while (aux)
+	pos = 1;	
+	while (*stack)
 	{		
-		i = 1;
-		while (i <= chunk_size)
+		i = first;
+		while (i <= last)
 		{	
-			if (aux->index == i)		
-				pos = aux->index;
+			if ((*stack)->index == i)		
+				pos = (*stack)->index;
 			i++;
 		}
-		aux = aux->next;
+		stack = &(*stack)->next;
 	}
-	// ft_printf("LASTT: %i\n", pos);
+	// ft_printf("find_last_occurrence: F: %i\n", first);
+	// ft_printf("find_last_occurrence: L: %i\n", last);
 	return (pos);
 }
 
 //TODO: Arreglar recursividad(chunk_size para ir avanzando)
-void	order_til_hundred(t_stack **stack_a, t_stack **stack_b)
+void	order_by_chunks(t_stack **stack_a, t_stack **stack_b, int first, int last)
 {
 	int	lst_size;
-	int first;
-	int last;
-	int	aux_size;
+	int first_el;
+	int last_el;
+	// int	aux_size;
 	
 	lst_size = ft_lstsize_ps(stack_a);
-	aux_size = lst_size;
-	ft_printf("size :%i\n", lst_size);
-	if(lst_size > 0)
+	// aux_size = lst_size;
+	// ft_printf("size :%i\n", lst_size);
+	if((*stack_a))
 	{
-		first = find_pos_index(stack_a,
-			find_first_occurrence(stack_a, lst_size / 5));
-		ft_printf("First :%i\n", first);
-		last = find_pos_index(stack_a, find_last_occurrence(stack_a, lst_size / 5));
-		ft_printf("Last :%i\n", last);
-		if ((first - 1) < (lst_size - last))
+		first_el = find_pos_index(stack_a,
+			find_first_occurrence(stack_a, first, last));
+		// ft_printf("First :%i\n", first);
+		last_el = find_pos_index(stack_a, find_last_occurrence(stack_a, first, last));
+		// ft_printf("Last :%i\n", last);
+		if ((first_el - 1) <= (lst_size - last_el))
 		{
-			while (first-- >= 1)
+			while (first_el-- >= 1 && (first_el - 1) > 0)
 			{
 				ft_ra(stack_a);
 				// first--;
-				ft_print(stack_a, stack_b);
+				// ft_print(stack_a, stack_b);
 			}
 		}
 		else
 		{
-			while (last++ <= lst_size)
+			while (last_el++ <= lst_size)
 			{
 				ft_rra(stack_a);
 				// last++;
-				ft_print(stack_a, stack_b);
+				// ft_print(stack_a, stack_b);
 			}
 		}
 	min_to_top(stack_b);
 	ft_pb(stack_a, stack_b);
-	ft_print(stack_a, stack_b);
+	// ft_print(stack_a, stack_b);
 	}	
 }
 
@@ -137,7 +137,7 @@ void min_to_top(t_stack **stack)
 	{
 		while (pos > 1)
 		{
-			ft_ra(stack);
+			ft_rb(stack);
 			pos--;
 		}
 	}
@@ -145,7 +145,7 @@ void min_to_top(t_stack **stack)
 	{
 		while (pos <= size)
 		{
-			ft_rra(stack);
+			ft_rrb(stack);
 			pos++;
 		}
 	}
@@ -160,21 +160,18 @@ void max_to_top(t_stack **stack)
 		return ;
 	size = ft_lstsize_ps(stack);	
 	pos = find_pos_value(stack, find_max(stack));
-	if (pos != 1 && pos < size / 2 && stack)
+	if (pos != 1 && pos < size / 2)
 	{
 		while (pos > 1)
 		{
-			ft_ra(stack);
+			ft_rb(stack);
 			pos--;
 		}
 
 	}
-	else if (pos != 1 && pos >= size / 2 && stack)
+	else if (pos != 1 && pos >= size / 2)
 	{
-		while (pos <= size)
-		{
-			ft_rra(stack);
-			pos++;
-		}
+		while (pos++ <= size)		
+			ft_rrb(stack);		
 	}
 }

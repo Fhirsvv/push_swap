@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/18 16:16:54 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:52:02 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ t_stack		*resort_ags(char **argv, t_stack **stack);
 void		ft_error(void);
 int			find_min(t_stack **stack);
 void		order_five(t_stack **stack_a, t_stack **stack_b);
-int			find_min_pos(t_stack **stack, int min);
 int			is_sorted(t_stack **stack);
 void		order_four(t_stack **stack_a, t_stack **stack_b);
 int			ft_lstsize_ps(t_stack **stack);
@@ -60,12 +59,14 @@ void		freeList(t_stack *stack);
 void		ft_free_split(char **str);
 void		assign_index(t_stack **stack, int index);
 int			find_min_without_stack(t_stack **stack);
-int			find_first_occurrence(t_stack **stack, int chunk_size);
-int			find_last_occurrence(t_stack **stack, int chunk_size);
+int			find_first_occurrence(t_stack **stack, int first, int last);
+int			find_last_occurrence(t_stack **stack, int first, int last);
 int			find_pos_index(t_stack **stack, int nb);
 int			find_pos_value(t_stack **stack, int nb);
-void		order_til_hundred(t_stack **stack_a, t_stack **stack_b);
+void		order_by_chunks(t_stack **stack_a, t_stack **stack_b, int first, int last);
 void		min_to_top(t_stack **stack);
 void		max_to_top(t_stack **stack);
 int			find_max(t_stack **stack);
+void	loops_for_hundred(t_stack **stack_a, t_stack **stack_b, int size);
+void	loops_for_five_hundred(t_stack **stack_a, t_stack **stack_b, int size);
 void    ft_print(t_stack **stack_a, t_stack **stack_b);

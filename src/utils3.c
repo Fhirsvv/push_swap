@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:58:09 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 12:57:17 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:46:09 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	find_pos_index(t_stack **stack, int nb)
     int pos;    
 	
 	pos = 1;	
-    while ((stack))
+    while ((*stack))
     {
         if ((*stack)->index == nb)
             break;
