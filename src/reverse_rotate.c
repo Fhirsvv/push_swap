@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 11:00:05 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/21 13:21:28 by fdiaz-gu         ###   ########.fr       */
+/*   Created: 2023/11/21 16:56:35 by ecortes-          #+#    #+#             */
+/*   Updated: 2023/11/21 16:56:37 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "../include/push_swap.h"
 

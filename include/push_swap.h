@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/21 13:41:25 by fdiaz-gu         ###   ########.fr       */
+/*   Created: 2023/11/21 16:55:21 by ecortes-          #+#    #+#             */
+/*   Updated: 2023/11/21 17:12:40 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
