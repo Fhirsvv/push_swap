@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:40:56 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 12:03:08 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:29:43 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,40 @@
 
 void	ft_error(void)
 {	
-	ft_printf("%s\n", "Error");
+	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
 
-void freeList(t_stack *stack)
+void	free_list(t_stack *stack)
 {
-   t_stack *tmp;
+	t_stack	*tmp;
 
-   while (stack != NULL)
-    {
-       tmp = stack;
-       stack = stack->next;
-       free(tmp);
-    }
+	while (stack != NULL)
+	{
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
+	}
 }
 
 void	assign_index(t_stack **stack, int index)
 {
-	t_stack *first;	
-	int min;
-	int stack_size;
-		
+	t_stack	*first;
+	int		min;
+	int		stack_size;
+
 	first = (*stack);
 	stack_size = ft_lstsize_ps(stack);
-	min = find_min_without_stack(stack);	
-	while((*stack))
-	{		
+	min = find_min_without_stack(stack);
+	while (*stack)
+	{
 		if (((*stack)->index == 0) && ((*stack)->value == min))
 		{
-			(*stack)->index = index;			
+			(*stack)->index = index;
 			break ;
 		}
 		stack = &(*stack)->next;
-	}	
-	if (index  <= stack_size)
+	}
+	if (index <= stack_size)
 		assign_index(&first, (index + 1));
 }
