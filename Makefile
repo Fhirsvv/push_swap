@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/21 13:34:52 by fdiaz-gu          #+#    #+#              #
+#    Updated: 2023/11/21 13:34:55 by fdiaz-gu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRC_DIR = ./src
 SRC = check_args.c main.c push.c reverse_rotate.c rotate.c swap.c utils.c utils2.c utils3.c order.c order2.c utils4.c
 
