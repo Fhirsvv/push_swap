@@ -6,28 +6,27 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 10:50:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/19 17:52:02 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:39:30 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
 # include <stdlib.h>
+# include <limits.h>
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
 # include "../libft/get_next_line.h"
-# define COLOR_RED "\033[0;31m"
-# define COLOR_GREEN "\033[0;32m"
-# define COLOR_BLUE "\033[0;36m"
-# define COLOR_RESET "\033[0m"
-
 
 typedef struct s_stack
 {
-	int		value;
-	int     index;
-	struct  s_stack *next;
+	int				value;
+	int				index;
+	struct s_stack	*next;
 }t_stack;
 
-t_stack     *ft_get_penultimate(t_stack *stack);
+t_stack		*ft_get_penultimate(t_stack *stack);
 void		order_three(t_stack **stack_a);
 void		ft_sa(t_stack **stack_a);
 void		ft_sb(t_stack **stack_b);
@@ -55,7 +54,7 @@ void		order_five(t_stack **stack_a, t_stack **stack_b);
 int			is_sorted(t_stack **stack);
 void		order_four(t_stack **stack_a, t_stack **stack_b);
 int			ft_lstsize_ps(t_stack **stack);
-void		freeList(t_stack *stack);
+void		free_list(t_stack *stack);
 void		ft_free_split(char **str);
 void		assign_index(t_stack **stack, int index);
 int			find_min_without_stack(t_stack **stack);
@@ -63,10 +62,13 @@ int			find_first_occurrence(t_stack **stack, int first, int last);
 int			find_last_occurrence(t_stack **stack, int first, int last);
 int			find_pos_index(t_stack **stack, int nb);
 int			find_pos_value(t_stack **stack, int nb);
-void		order_by_chunks(t_stack **stack_a, t_stack **stack_b, int first, int last);
+void		order_by_chunks(t_stack **stack_a, t_stack **stack_b,
+				int first, int last);
 void		min_to_top(t_stack **stack);
 void		max_to_top(t_stack **stack);
 int			find_max(t_stack **stack);
-void	loops_for_hundred(t_stack **stack_a, t_stack **stack_b, int size);
-void	loops_for_five_hundred(t_stack **stack_a, t_stack **stack_b, int size);
-void    ft_print(t_stack **stack_a, t_stack **stack_b);
+int			ft_atoi_ps(const char *str);
+void		loops_for_hundred(t_stack **stack_a, t_stack **stack_b, int size);
+void		loops_for_five_hundred(t_stack **stack_a,
+				t_stack **stack_b, int size);
+#endif
