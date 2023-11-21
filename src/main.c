@@ -6,11 +6,9 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:55:49 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 16:55:50 by ecortes-         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:48:50 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/push_swap.h"
 
@@ -67,7 +65,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-		ft_error();
+		return (0);
 	stack_a = resort_ags(argv, &stack_a);
 	check_duplicated(&stack_a);
 	assign_index(&stack_a, 1);
