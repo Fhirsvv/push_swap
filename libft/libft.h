@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 09:58:20 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/13 17:04:27 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:40:54 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include <limits.h>
 # include <stdlib.h>
-// # include <stdio.h>
 # include <unistd.h>
 # include "ft_printf.h"
 # include "get_next_line.h"
+
 typedef struct s_list
 {
 	void			*content;
