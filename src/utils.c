@@ -6,10 +6,9 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:10 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 10:17:30 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:27:51 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../include/push_swap.h"
 
@@ -45,12 +44,11 @@ void	ft_lstadd_back_ps(t_stack **lst, t_stack *new)
 	{
 		last = *lst;
 		while (last->next != NULL)
-		{
 			last = last->next;
-		}
 		last->next = new;
 	}
 }
+
 void	ft_lstadd_front_ps(t_stack **lst, t_stack *new)
 {
 	new->next = *lst;
@@ -62,8 +60,6 @@ t_stack	*ft_lstlast_ps(t_stack *lst)
 	if (!lst)
 		return (NULL);
 	while (lst->next)
-	{
 		lst = lst->next;
-	}
 	return (lst);
 }
