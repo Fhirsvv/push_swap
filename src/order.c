@@ -6,13 +6,13 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:38:51 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/17 12:48:26 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:15:21 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void order_three(t_stack **stack_a)
+void	order_three(t_stack **stack_a)
 {
 	if ((*stack_a)->value < (*stack_a)->next->value)
 	{
@@ -43,15 +43,15 @@ void order_three(t_stack **stack_a)
 
 void	order_four(t_stack **stack_a, t_stack **stack_b)
 {
-	int min;
-	int pos;	
-		
-	min = find_min(stack_a);		
+	int	min;
+	int	pos;	
+
+	min = find_min(stack_a);
 	pos = find_pos_value(stack_a, min);
 	if (pos <= 2)
 	{
 		while (pos-- > 1)
-			ft_ra(stack_a);				
+			ft_ra(stack_a);
 	}
 	else
 		while (pos++ <= 4)
@@ -65,15 +65,15 @@ void	order_four(t_stack **stack_a, t_stack **stack_b)
 
 void	order_five(t_stack **stack_a, t_stack **stack_b)
 {
-	int min;
-	int pos;	
-		
-	min = find_min(stack_a);		
+	int	min;
+	int	pos;
+
+	min = find_min(stack_a);
 	pos = find_pos_value(stack_a, min);
 	if (pos <= 3)
 	{
 		while (pos-- > 1)
-			ft_ra(stack_a);				
+			ft_ra(stack_a);
 	}
 	else
 		while (pos++ <= 5)
@@ -81,6 +81,3 @@ void	order_five(t_stack **stack_a, t_stack **stack_b)
 	ft_pb(stack_a, stack_b);
 	order_four(stack_a, stack_b);
 }
-
-
-// printf("Macarrones con queso|n"); i = 9;
