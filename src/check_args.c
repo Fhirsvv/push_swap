@@ -6,7 +6,7 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/21 13:12:05 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:48:07 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	check_if_nb(char *str)
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
+	if (str[i] == '\0')
+		ft_error();
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
