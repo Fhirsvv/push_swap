@@ -6,12 +6,11 @@
 /*   By: fdiaz-gu <fdiaz-gu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:13:44 by fdiaz-gu          #+#    #+#             */
-/*   Updated: 2023/11/16 14:09:26 by fdiaz-gu         ###   ########.fr       */
+/*   Updated: 2023/11/21 13:12:05 by fdiaz-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <limits.h>
 
 int	check_if_nb(char *str)
 {
@@ -26,75 +25,76 @@ int	check_if_nb(char *str)
 		ft_error();
 	return (1);
 }
-t_stack *check_and_save(char *str, t_stack **first_node)
+
+t_stack	*check_and_save(char *str, t_stack **first_node)
 {
-	int flag;
-	t_stack *aux;
-	unsigned long nb;
-		
-	nb = ft_atoi(str);
+	int				flag;
+	t_stack			*aux;
+	unsigned long	nb;
+
+	nb = ft_atoi_ps(str);
 	flag = check_if_nb(str);
-	if (flag == 1)
+	if (flag)
 	{
-			aux = ft_lstnew_ps(nb);		
-			ft_lstadd_back_ps(first_node, aux);
+		aux = ft_lstnew_ps(nb);
+		ft_lstadd_back_ps(first_node, aux);
 	}
 	return (*first_node);
 }
 
 void	check_duplicated(t_stack **stack_a)
 {
-	t_stack *aux;
-	
-	if (!stack_a)		
-		return ;		
+	t_stack	*aux;
+
+	if (!stack_a)
+		return ;
 	while ((*stack_a)->next)
-	{		
-		aux = (*stack_a)->next;		
+	{
+		aux = (*stack_a)->next;
 		while (aux != NULL)
 		{
-			if ((*stack_a)->value == aux->value)			
-				ft_error();		
+			if ((*stack_a)->value == aux->value)
+				ft_error();
 			aux = aux->next;
 		}
 		stack_a = &(*stack_a)->next;
-	}	
+	}
 }
 
 t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 {
-	int i;			
-	char **nb_aux;
-	t_stack *aux;
+	int		i;
+	char	**nb_aux;
+	t_stack	*aux;
 
-	i = 0;	
-	nb_aux = NULL;	
+	i = 0;
+	nb_aux = NULL;
 	while (str[++i])
 	{
 		if (str[i] == 32)
 		{
 			nb_aux = ft_split(str, 32);
-			break ;			
-		}			
-	}			
+			break ;
+		}
+	}
 	if (nb_aux)
 	{
 		i = -1;
-		while (nb_aux[++i])			
+		while (nb_aux[++i])
 			aux = check_and_save(nb_aux[i], stack_a);
 		ft_free_split(nb_aux);
 	}
-	else		
-		aux = check_and_save(str, stack_a);		
+	else
+		aux = check_and_save(str, stack_a);
 	return (aux);
 }
 
 t_stack	*resort_ags(char **argv, t_stack **stack)
 {
-	int i;
+	int		i;
 	t_stack	*aux;	
 
-	i = 1;	
+	i = 1;
 	while (argv[i])
 	{
 		aux = check_nb_in_argv(argv[i], stack);
