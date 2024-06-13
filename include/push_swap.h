@@ -6,7 +6,7 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:55:21 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 17:12:40 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:47:04 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 # include "../libft/libft.h"
 # include "../libft/ft_printf.h"
-# include "../libft/get_next_line.h"
+//# include "../libft/get_next_line.h"
 
 typedef struct s_stack
 {
