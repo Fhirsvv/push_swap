@@ -6,11 +6,9 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:55:56 by ecortes-          #+#    #+#             */
-/*   Updated: 2024/06/13 17:52:28 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 14:58:34 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/push_swap.h"
 
@@ -62,7 +60,7 @@ void	order_four(t_stack **stack_a, t_stack **stack_b)
 	if (!is_sorted(stack_a))
 		order_three(stack_a);
 	ft_pa(stack_a, stack_b);
-	//ft_pa(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);
 }
 
 void	order_five(t_stack **stack_a, t_stack **stack_b)

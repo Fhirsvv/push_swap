@@ -6,7 +6,7 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:55:41 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 16:55:42 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 14:13:25 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ t_stack	*check_nb_in_argv(char *str, t_stack **stack_a)
 	nb_aux = NULL;
 	while (str[++i])
 	{
-		if (str[i] == 32)
+		if (str[i] == ' ')
 		{
-			nb_aux = ft_split(str, 32);
+			nb_aux = ft_split(str, ' ');
 			break ;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:57:10 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 16:57:11 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 14:18:56 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	loops_for_five_hundred(t_stack **stack_a, t_stack **stack_b, int size)
 
 int	ft_atoi_ps(const char *str)
 {
-	unsigned long	result;
+	long	result;
 	int				sign;
 
 	sign = 1;
@@ -101,7 +101,7 @@ int	ft_atoi_ps(const char *str)
 		result = result * 10 + (*str - '0');
 		if (result > INT_MAX && sign > 0)
 			ft_error();
-		if (result > INT_MAX && sign < 0)
+		if (result * sign < INT_MIN && sign < 0)
 			ft_error();
 		str++;
 	}
