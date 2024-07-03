@@ -6,11 +6,9 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:57:05 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 17:03:20 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 15:08:19 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/push_swap.h"
 
@@ -38,7 +36,7 @@ int	find_max(t_stack **stack)
 		if (max < (*stack)->value)
 			max = (*stack)->value;
 		stack = &(*stack)->next;
-	}	
+	}
 	return (max);
 }
 

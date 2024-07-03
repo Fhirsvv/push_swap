@@ -6,11 +6,9 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:56:18 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 16:56:19 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 15:07:56 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/push_swap.h"
 
@@ -77,13 +75,13 @@ void	order_by_chunks(t_stack **stack_a, t_stack **stack_b,
 		{
 			while (last_el++ <= lst_size)
 				ft_rra(stack_a);
-		}	
+		}
 		ft_pb(stack_a, stack_b);
-	}	
+	}
 }
 
 void	min_to_top(t_stack **stack)
-{	
+{
 	int	pos;
 	int	size;
 

@@ -6,11 +6,9 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:55:21 by ecortes-          #+#    #+#             */
-/*   Updated: 2024/06/13 17:47:04 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 15:07:36 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -26,7 +24,7 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	struct s_stack	*next;
-}t_stack;
+}	t_stack;
 
 t_stack		*ft_get_penultimate(t_stack *stack);
 void		order_three(t_stack **stack_a);

@@ -6,16 +6,14 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:56:59 by ecortes-          #+#    #+#             */
-/*   Updated: 2023/11/21 16:57:00 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 15:08:55 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/push_swap.h"
 
 void	ft_error(void)
-{	
+{
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }

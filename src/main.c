@@ -6,11 +6,12 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:55:49 by ecortes-          #+#    #+#             */
-/*   Updated: 2024/07/03 14:54:52 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 15:06:36 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ARG=$(seq -1000 1000 | sort -R | tail -n 100 | tr '\n' ' '); ./push_swap $ARG | wc -l && ./push_swap $ARG | ./checker_linux $ARG
+// ARG=$(seq -1000 1000 | sort -R | tail -n 100 | tr '\n' ' '); 
+//./push_swap $ARG | wc -l && ./push_swap $ARG | ./checker_linux $ARG
 #include "../include/push_swap.h"
 
 int	is_sorted(t_stack **stack)
@@ -66,7 +67,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-		return 0;
+		return (0);
 	stack_a = resort_ags(argv, &stack_a);
 	check_duplicated(&stack_a);
 	assign_index(&stack_a, 1);

@@ -6,11 +6,9 @@
 /*   By: ecortes- <ecortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:57:10 by ecortes-          #+#    #+#             */
-/*   Updated: 2024/07/03 14:18:56 by ecortes-         ###   ########.fr       */
+/*   Updated: 2024/07/03 15:09:09 by ecortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../include/push_swap.h"
 
@@ -40,7 +38,7 @@ void	loops_for_hundred(t_stack **stack_a, t_stack **stack_b, int size)
 	while ((*stack_a))
 	{
 		while (count <= (chunk * i))
-		{		
+		{
 			order_by_chunks(stack_a, stack_b,
 				(chunk * i + 1) - chunk, chunk * i);
 			count++;
@@ -66,7 +64,7 @@ void	loops_for_five_hundred(t_stack **stack_a, t_stack **stack_b, int size)
 	while ((*stack_a))
 	{
 		while (count <= (chunk * i))
-		{		
+		{
 			order_by_chunks(stack_a, stack_b,
 				(chunk * i + 1) - chunk, chunk * i);
 			count++;
@@ -83,7 +81,7 @@ void	loops_for_five_hundred(t_stack **stack_a, t_stack **stack_b, int size)
 int	ft_atoi_ps(const char *str)
 {
 	long	result;
-	int				sign;
+	int		sign;
 
 	sign = 1;
 	result = 0;
